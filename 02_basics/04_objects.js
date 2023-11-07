@@ -65,3 +65,16 @@ console.log(User)/*[
  console.log(Object.values(tinderUser))// [ 'radhakant', 21, 'tind@tindi.in' ]
  console.log(Object.entries(tinderUser))// [ [ 'name', 'radhakant' ], [ 'age', 21 ], [ 'id', 'tind@tindi.in' ] ]
  console.log(tinderUser.hasOwnProperty('age'))//true
+
+
+ // object destructure
+ const course={
+    courseName:"learning javascript",
+    courseInstructor:"Hitesh Choudhary",
+    coursePrice:"Free"
+
+ }
+ console.log(course.courseInstructor)//Hitesh Choudhary
+ const {courseInstructor: cinst}=course;// object destructuring
+ console.log(cinst);//Hitesh Choudhary
+ // api's are in json format
