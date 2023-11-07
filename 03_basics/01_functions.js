@@ -32,3 +32,10 @@ function calculateCartPrice(...num1){
     console.log(`username is ${any_object.userName} and age is ${any_object.age}`);
    }
    userDetailPrint(userDetails);
+
+   // 
+   const prices=[100,200,300,400,500];
+   function productprices(array_name){
+    console.log(`the second element of array is ${array_name[1]}`)//200
+   }
+   productprices(prices)//the second element of array is 200
