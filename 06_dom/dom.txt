@@ -1,0 +1,5 @@
+DOM=Document Object Model
+ document.getElementById();
+ document.getElementByClassName();
+ document.querySelector();// selects the first one
+ document.querySelectorAll(); // returns a nodal list (upon which for each loop can be used)
