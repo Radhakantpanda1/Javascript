@@ -90,3 +90,12 @@ var employeeDetails={
     employeeAge:45,
     employeeId:"saransh@sarasarrr.com"
 }// this is a filled object
+for (const key in employeeDetails) {
+    console.log(`${key}=${employeeDetails[key]}`);
+}
+/*
+employeeName=saransh
+employeeAge=45
+employeeId=saransh@sarasarrr.com
+*/
+
