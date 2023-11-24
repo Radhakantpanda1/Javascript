@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+    <style>
+        
+        #bulb{
+            margin:70px;
+            height: 500px;
+            width: 500px;
+            border:5px solid black;
+            border-radius: 50%;
+            background-color: #000;
+        }
+        #nb{
+            height: 100px;
+            width: 300px;
+            border:5px solid black;
+            border-radius: 35px;
+            font-size: 25px;
+        }
+        .parent{
+            display: flex;
+            align-items: center;
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="parent">
+        <div id="bulb">
+
+        </div>
+        <div class="button">
+            <button id="nb">TRANSFORM</button>
+        </div>
+    </div>
+    
+    
+    <script>
+        let state=0;
+        let userClick = document.querySelector('button');
+        userClick.addEventListener('click',function(){
+          
+                if(state==0){
+            document.querySelector('body').style.backgroundColor='#000';
+            document.querySelector('#bulb').style.backgroundColor='#fff';
+            document.querySelector('button').innerHTML='REVERSE';
+            state=1;
+            }
+            else{
+                document.querySelector('body').style.backgroundColor='#fff';
+            document.querySelector('#bulb').style.backgroundColor='#000';
+            document.querySelector('button').innerHTML='TRANSFORM';
+            state=0;
+            }
+            
+            
+        })
+    </script>
+</body>
+</html>
