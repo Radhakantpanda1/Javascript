@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #212121; color:antiquewhite">
+   <ul class="lang">
+    <li>javascript</li>
+   </ul>
+   <script>
+    function addElement(l){
+        
+        let elem= document.createElement('li');
+        elem.innerHTML=`${l}`;
+       let c= document.querySelector('.lang');
+        c.appendChild(elem);
+ 
+     }
+     addElement("cpp");
+     addElement("python");
+
+     // the above method can be further optimised 
+     function optiaddelem(lang){
+        let li=document.createElement('li');
+        li.append(document.createTextNode(lang));
+        document.querySelector('.lang').appendChild(li);
+     }
+     optiaddelem("java");
+     optiaddelem("golang");
+
+
+
+     // edit  
+  let second=document.querySelector('li:nth-child(2)')
+  second.innerHTML="typescript";
+
+  //m-2
+  let first=document.querySelector('li:nth-child(1)')
+  first.textContent="ecmascript";
+  //m-3
+
+  let third=document.querySelector('li:nth-child(3)')
+  const newli = document.createElement('li');
+  newli.textContent="c";
+  third.replaceWith(newli);
+
+  // remove 
+  let e=document.querySelector('li:last-child');
+  e.remove();// golang is removed
+
+
+</script>
+</body>
+
+</html>
