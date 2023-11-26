@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .parent{
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            width: 100vw;
+            gap:50px;
+            
+        }
+        .child img{
+            height: 250px;
+            width: 250px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <div class="child" >
+            <img src="https://images.unsplash.com/photo-1546182990-dffeafbe841d?q=80&w=2059&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="" id="lion">
+        </div>
+        <div class="child" id="tiger">
+            <img src="https://images.unsplash.com/photo-1508817628294-5a453fa0b8fb?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHRpZ2VyfGVufDB8fDB8fHww" alt="" >
+        </div>
+        <div class="child" id="dog">
+            <img src="https://images.unsplash.com/photo-1586671267731-da2cf3ceeb80?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8ZG9nfGVufDB8fDB8fHww alt="">
+        </div>
+        <div class="child" id="bird">
+            <img src="https://images.unsplash.com/photo-1698495462275-acd6e5ca2e66?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDZ8SnBnNktpZGwtSGt8fGVufDB8fHx8fA%3D%3D" alt="">
+        </div>
+        <div class="child" id="cat">
+            <img src="https://images.unsplash.com/photo-1700636417590-fbe716b6a082?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDE1fEpwZzZLaWRsLUhrfHxlbnwwfHx8fHw%3D" alt="">
+        </div>
+    </div>
+    <script>
+        /*
+        document.getElementById('dog').onclick=function(){
+            alert("kutta hai ye");
+        }//  this is not the best method as many more proprties can be unlocked using addEventListener()
+            */
+
+            /*
+            document.getElementById('dog').addEventListener('click',function(k){
+                alert("kutta hai yee");// k is the event
+            },false)// false is the by-default value asked in interviews
+            */
+
+            /*
+            EVENT PROPAGATION-
+            FALSE-EVENT PUBLIC
+            */
+            // attachEvent() used earlier
+
+            /*
+            types 
+            timestamp
+            defaultPrevented
+            toElement
+            srcElement
+            currentTarget
+            target
+            client x,y
+            offset screenX screenY
+            ALTKEY CTRL KEY SHIFTKEY KEYCODE
+            */
+
+            // FALSE-BUBBLING (INSIDE TO OUTSIDE )
+            //TRUE CAPTURING TOP TO BOTTOM
+           // k.stopPropagation();// k is the event 
+           document.querySelector('.parent').addEventListener('click', function(kk) {
+             console.log(kk.target.parentNode);
+             console.log(kk.target);
+
+             // to remove the image which is clicked
+             let removeit=kk.target.parentNode;
+             removeit.parentNode.removeChild(removeit);
+             console.log(kk.target.tagName);
+           },false)
+            
+    </script>
+</body>
+</html>
